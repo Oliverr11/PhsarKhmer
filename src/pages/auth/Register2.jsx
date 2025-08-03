@@ -64,9 +64,8 @@ export default function Register2() {
   return (
     <div className="bg-teal-500 h-[100vh]">
       <br />
-      <br />
       <form
-        className=" w-1/2 mx-auto  bg-gray-100 rounded-2xl p-5"
+        className=" w-1/2 mx-auto  bg-gray-100 rounded-2xl p-4"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h1 className="text-3xl font-bold m-4 text-center text-teal-600">
@@ -76,10 +75,10 @@ export default function Register2() {
           <div class="flex items-center justify-center w-full">
             <label
               for="dropzone-file"
-              class="justify-center w-64 rounded-full h-64 border-gray-300  cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+              class="justify-center w-40 rounded-full h-40 border-gray-300  cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
             >
               <img
-                class=" w-64 rounded-full h-64 object-cover "
+                class=" w-40 rounded-full h-40 object-cover "
                 src={preview}
               />
               <input
@@ -97,7 +96,7 @@ export default function Register2() {
           <div class="flex items-center justify-center w-full">
             <label
               for="dropzone-file"
-              class="flex flex-col items-center justify-center w-64 rounded-full h-64 border-2 border-gray-300 border-dashed  cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+              class="flex flex-col items-center justify-center w-40 rounded-full h-40 border-2 border-gray-300 border-dashed  cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
             >
               <div class="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg
@@ -116,8 +115,7 @@ export default function Register2() {
                   />
                 </svg>
                 <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span class="font-semibold">Click to upload</span> or drag and
-                  drop
+                  Upload here
                 </p>
               </div>
               <input
