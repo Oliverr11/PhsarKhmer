@@ -9,6 +9,7 @@ export default function ProductDetail() {
   const { data, isLoading } = useGetProductByIdQuery(id);
   return (
     <>
+    
       {isLoading ? (
         <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start animate-pulse">
           <div>

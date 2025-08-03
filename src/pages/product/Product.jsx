@@ -1,6 +1,7 @@
 import React from "react";
 import CardProduct from "../../components/card/card-product";
 import { useGetProductsQuery } from "../../features/product/productSlice2";
+import { NavLink } from "react-router";
 
 export default function Product() {
   const { data, isLoading, isError } = useGetProductsQuery();
