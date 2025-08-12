@@ -4,14 +4,15 @@ import "./index.css";
 import App from "./App.jsx";
 import { store } from "./store.js";
 import { Provider } from "react-redux";
-import Product from "./pages/product/Product.jsx";
 import { BrowserRouter, Route, Routes } from "react-router";
 import ProductDetail from "./pages/product/ProductDetail.jsx";
 import Login from "./pages/auth/Login.jsx";
 import RootLayout from "./components/layouts/root-layout.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Register2 from "./pages/auth/Register2.jsx";
-import ProductForm from "./pages/product/ProductForm.jsx";
+import ProductForm2 from "./pages/product/ProductFormInputURLS.jsx";
+import Products from "./pages/product/ProductTable.jsx";
+import ProductEditForm from "./pages/product/ProductEditForm.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,8 +21,9 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route element={<RootLayout />}>
             <Route path="/" element={<App />} />
-            <Route path="/products" element={<Product />} />
-            <Route path="/add-product" element={<ProductForm />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/add-product" element={<ProductForm2 />} />
+            <Route path="/edit/:id" element={<ProductEditForm />} />
 
             <Route path="/products/:id" element={<ProductDetail />} />
           </Route>
