@@ -27,12 +27,12 @@ export default function Product() {
             array.map((index) => <SkeletonCardProduct key={index} />)}
           {/* product section */}
           {!isLoading &&
-            data?.map((p, index) => (
+            data?.content?.map((p, index) => (
               <CardProduct
                 key={index}
-                thumbnail={p.images[0]}
-                title={p.title}
-                id={p.id}
+                thumbnail={p.thumbnail}
+                title={p.name}
+                id={p.uuid}
               />
             ))}
         </section>

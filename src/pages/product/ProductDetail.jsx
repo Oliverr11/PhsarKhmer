@@ -9,7 +9,6 @@ export default function ProductDetail() {
   const { data, isLoading } = useGetProductByIdQuery(id);
   return (
     <>
-    
       {isLoading ? (
         <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start animate-pulse">
           <div>
@@ -51,7 +50,7 @@ export default function ProductDetail() {
             </p>
 
             <h1 className="text-3xl font-bold text-gray-800 mb-4">
-              {data?.title}
+              {data?.name}
             </h1>
 
             <div className="flex items-center justify-between mb-4">
@@ -68,7 +67,9 @@ export default function ProductDetail() {
             <p className="text-gray-700 leading-relaxed mb-3">
               {data?.description}
             </p>
-            <p className="text-3xl font-bold text-teal-500">$ {data?.price}</p>
+            <p className="text-3xl font-bold text-teal-500">
+              $ {data?.priceOut}
+            </p>
             <button className="w-[100%] text-white rounded-2xl p-3 mt-5 bg-teal-500 ">
               Add To Card
             </button>
@@ -76,8 +77,8 @@ export default function ProductDetail() {
 
           <div className="flex gap-4">
             <img
-              src={data?.images?.[0]}
-              alt={data?.title}
+              src={data?.thumbnail}
+              alt={data?.nme}
               className="w-2/3 h-auto object-cover rounded-lg shadow-md"
             />
 

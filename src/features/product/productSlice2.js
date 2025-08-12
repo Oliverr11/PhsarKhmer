@@ -23,13 +23,29 @@ const productApi = apiSlice.injectEndpoints({
         body: productData,
       }),
     }),
-  }),
+    deleteProduct: build.mutation({
+      query: (id) => ({
+        url: `/products/${id}`,
+        method: "DELETE",
+      }),
+    }),
+    updateProduct: build.mutation({
+      query: ({ id, ...patch }) => ({
+        url: `/products/${id}`,
+        method: "PUT",
+        body: patch,
+      }),
+      invalidatesTags: ["Products"], // so the product list refreshes after update
+    }),
+  }), 
 });
 
 export const {
   useGetProductsQuery,
   useGetProductByIdQuery,
   useCreateProductMutation,
+  useDeleteProductMutation,
+  useUpdateProductMutation,
 } = productApi;
 
 // function getData(enpoint)
