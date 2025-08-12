@@ -115,6 +115,7 @@ export default function ProductEditForm() {
         {...register("priceOut", { valueAsNumber: true })}
         type="number"
         placeholder="Price Out"
+        step="any"
         className="border p-2 rounded"
       />
       {errors.priceOut && (
