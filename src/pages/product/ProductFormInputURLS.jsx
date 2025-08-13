@@ -4,6 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 
 const schema = z.object({
   name: z.string().nonempty("Name is required"),
@@ -59,9 +60,9 @@ export default function ProductForm2() {
     images: [
       "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=800",
     ],
-    categoryUuid: "eb115ca4-a6b2-43f7-aa59-2def7e30dd7b",
-    supplierUuid: "fd9d42e3-3afc-43a8-8eb4-7cb4c1c9b411",
-    brandUuid: "8620f990-ef33-495c-b38c-236da90c9b46",
+    categoryUuid: "dc071830-ce8a-40e2-ad51-3c1adeeb02cb",
+    supplierUuid: "0980127a-dc6d-487d-b166-957bcda2540d",
+    brandUuid: "8265f3c7-9aea-498c-88b2-9e1bacb4f716",
   };
 
   const onSubmit = async (data) => {
@@ -73,6 +74,8 @@ export default function ProductForm2() {
       };
       const result = await createProduct(payload).unwrap();
       if (result) {
+        toast.success("Product created successfully!");
+
         navigate("/products");
       }
     } catch (error) {
@@ -120,6 +123,7 @@ export default function ProductForm2() {
           {...register("priceIn", { valueAsNumber: true })}
           type="number"
           placeholder="Price In"
+          step="any"
           className="border border-gray-300 rounded px-3 py-2"
         />
         {errors.priceIn && (
@@ -129,6 +133,7 @@ export default function ProductForm2() {
         <input
           {...register("priceOut", { valueAsNumber: true })}
           type="number"
+          step="any"
           placeholder="Price Out"
           className="border border-gray-300 rounded px-3 py-2"
         />
