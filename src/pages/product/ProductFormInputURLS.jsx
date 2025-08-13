@@ -4,6 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 
 const schema = z.object({
   name: z.string().nonempty("Name is required"),
@@ -73,6 +74,8 @@ export default function ProductForm2() {
       };
       const result = await createProduct(payload).unwrap();
       if (result) {
+        toast.success("Product created successfully!");
+
         navigate("/products");
       }
     } catch (error) {

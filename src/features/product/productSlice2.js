@@ -9,12 +9,14 @@ const productApi = apiSlice.injectEndpoints({
         url: "/products",
         method: "GET",
       }),
+      providesTags: ["product"],
     }),
     getProductById: build.query({
       query: (id) => ({
         url: `/products/${id}`,
         method: "GET",
       }),
+      providesTags: ["product"],
     }),
     createProduct: build.mutation({
       query: (productData) => ({
@@ -22,12 +24,14 @@ const productApi = apiSlice.injectEndpoints({
         method: "POST",
         body: productData,
       }),
+      invalidatesTags: ["product"],
     }),
     deleteProduct: build.mutation({
       query: (id) => ({
         url: `/products/${id}`,
         method: "DELETE",
       }),
+      invalidatesTags: ["product"],
     }),
     updateProduct: build.mutation({
       query: ({ id, ...patch }) => ({
@@ -35,9 +39,9 @@ const productApi = apiSlice.injectEndpoints({
         method: "PUT",
         body: patch,
       }),
-      invalidatesTags: ["Products"], // so the product list refreshes after update
+      invalidatesTags: ["product"],
     }),
-  }), 
+  }),
 });
 
 export const {
@@ -47,5 +51,3 @@ export const {
   useDeleteProductMutation,
   useUpdateProductMutation,
 } = productApi;
-
-// function getData(enpoint)

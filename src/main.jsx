@@ -13,7 +13,7 @@ import Register2 from "./pages/auth/Register2.jsx";
 import ProductForm2 from "./pages/product/ProductFormInputURLS.jsx";
 import Products from "./pages/product/ProductTable.jsx";
 import ProductEditForm from "./pages/product/ProductEditForm.jsx";
-
+import { ToastContainer } from "react-toastify";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
@@ -30,6 +30,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register2 />} />
         </Routes>
+        <ToastContainer position="top-right" autoClose={3000} />
       </BrowserRouter>
     </Provider>
   </StrictMode>

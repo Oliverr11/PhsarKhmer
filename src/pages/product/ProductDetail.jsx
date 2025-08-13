@@ -70,9 +70,6 @@ export default function ProductDetail() {
             <p className="text-3xl font-bold text-teal-500">
               $ {data?.priceOut}
             </p>
-            <button className="w-[100%] text-white rounded-2xl p-3 mt-5 bg-teal-500 ">
-              Add To Card
-            </button>
           </div>
 
           <div className="flex gap-4">
