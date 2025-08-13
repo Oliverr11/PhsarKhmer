@@ -43,17 +43,21 @@ export default function Products() {
       selector: (row) => row?.name,
       sortable: true,
     },
+
     {
       name: "Category",
       selector: (row) => row?.category?.name,
+      sortable: true,
     },
     {
       name: "Price",
       selector: (row) => row?.priceOut + " $",
+      sortable: true,
     },
     {
       name: "Stock",
       selector: (row) => row?.stockQuantity,
+      sortable: true,
     },
     {
       name: "Actions",
