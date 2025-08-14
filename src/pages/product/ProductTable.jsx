@@ -10,6 +10,7 @@ import { useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { Button, Modal, ModalBody, ModalHeader } from "flowbite-react";
 import { ToastContainer, toast } from "react-toastify";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Products() {
   const { data, isLoading } = useGetProductsQuery();
@@ -110,6 +111,33 @@ export default function Products() {
     cells: {
       style: {},
     },
+    pagination: {
+      style: {
+        borderTop: "1px solid #E5E7EB", // Light gray border
+        paddingTop: "10px",
+        paddingBottom: "10px",
+        backgroundColor: "#F9FAFB", // Light background
+      },
+      pageButtonsStyle: {
+        borderRadius: "5px",
+        height: "35px",
+        width: "35px",
+        padding: "5px",
+        margin: "0 5px",
+        cursor: "pointer",
+        transition: "0.3s",
+        backgroundColor: "#fff",
+        border: "1px solid #D1D5DB",
+        "&:hover": {
+          backgroundColor: "#4CAF50",
+          color: "white",
+        },
+        "&:disabled": {
+          cursor: "unset",
+          color: "#9CA3AF",
+        },
+      },
+    },
   };
   console.log("data from RTK Query", data);
 
@@ -129,6 +157,14 @@ export default function Products() {
           pagination
           progressPending={isLoading}
           customStyles={customStyles}
+          progressComponent={
+            <div className="flex justify-center items-center p-5">
+              <ClipLoader size={50} color="#4CAF50" loading={true} />
+              <span className="ml-3 text-lg text-gray-600">
+                Loading products...
+              </span>
+            </div>
+          }
         />
       </div>
 
