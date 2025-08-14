@@ -1,10 +1,9 @@
-import React from "react";
 import { useCreateProductMutation } from "../../features/product/productSlice2";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const schema = z.object({
   name: z.string().nonempty("Name is required"),
