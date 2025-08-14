@@ -7,13 +7,13 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router";
 import ProductDetail from "./pages/product/ProductDetail.jsx";
 import Login from "./pages/auth/Login.jsx";
-import RootLayout from "./components/layouts/root-layout.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Register2 from "./pages/auth/Register2.jsx";
 import ProductForm2 from "./pages/product/ProductFormInputURLS.jsx";
 import Products from "./pages/product/ProductTable.jsx";
 import ProductEditForm from "./pages/product/ProductEditForm.jsx";
 import { ToastContainer } from "react-toastify";
+import RootLayout from "./components/layouts/RootLayout.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
